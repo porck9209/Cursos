@@ -4,7 +4,7 @@ const filha1 = Object.Create(pai)
 filha1.nome = "ana"
 console.log(filha1.corCabelo)
 
-const filha2 = Object.create(pai,{
+const filha2 = Object.create(pai, {
     nome: "bia", writable: false, enumerable:true,
 })
 
