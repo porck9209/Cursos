@@ -6,7 +6,7 @@ function Maiorque (a , b){
     }
 
 }
-Maiorque(12, 10)
+Maiorque(12, 12)
 Maiorque(10, 10)
 Maiorque(10, "10")
 
