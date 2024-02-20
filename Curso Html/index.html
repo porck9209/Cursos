@@ -5,20 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicios HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0px;
+        }
+    </style>
 
 </head>
 
 <body>
     <header>
-        Exercicios HTML
+        <h1>Exercicios HTML</h1>
     </header>
     <nav>
-        <a href="Exrciciops/teste.html">Exercicios - 00</a>
+        <a href wm-nav="http://127.0.0.1:5500/Cursos/Curso%20Html/Exrciciops/teste.html">teste - 00</a>
+        <a href wm-nav="http://127.0.0.1:5500/Cursos/Curso%20Html/Exrciciops/temp.html">temp</a>
     </nav>
-    <section id="Comteudo"></section>
+    <section id="Conteudo"></section>
     <footer>
-        <br> Curso de Web
+        Curso de Web
     </footer>
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+
+            link.onclick = function(e) {
+                e.preventDefault()
+                fetch(link.getAttribute('wm-nav'))
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
 
 </body>
 
